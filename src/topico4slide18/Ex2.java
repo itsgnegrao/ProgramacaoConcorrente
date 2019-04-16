@@ -1,15 +1,13 @@
 package topico4slide18;
 
 import java.util.*;
+
 /**
- * Faca um programa em Java que use Threads para encontrar
- * os nuumeros primos dentro de um intervalo. O metodo que
- * contabiliza os numeros primos deve possuir como entrada:
- * valor inicial e final do intervalo, numero de threads.
+ *
  * @author itsgnegrao
  */
 
-public class Ex1 {
+public class Ex2 {
     public static void main(String[] args){
         System.out.print("Digite um intervalo separados por espaço: ");
         String inputString[] = new Scanner(System.in).nextLine().split(" ");
