@@ -23,7 +23,7 @@ public class Ex2 {
                       Thread.sleep(200);
                     } 
                     System.out.println("Irei dormir agora por 4 segundos!\n");
-                    Thread.sleep(4000);
+                    Thread.sleep(10000);
                 }
                 catch(Exception e){
                     e.printStackTrace();

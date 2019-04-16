@@ -10,7 +10,7 @@ import java.io.*;
  * @author itsgnegrao
  */
 
-class T1 extends Thread{
+class T extends Thread{
 
     @Override
     public void run(){
@@ -43,7 +43,8 @@ class T1 extends Thread{
 public class Ex3 {
     public static void main(String[] args){
         try{
-            Thread t1 = new T1().start();
+            Thread t1 = new T();
+            t1.start();
             Thread.sleep(5000);
             t1.interrupt();
         }
