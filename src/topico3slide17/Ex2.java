@@ -1,7 +1,6 @@
 package topico3slide17;
 
 import java.io.*;
-import java.util.List;
 
 /**
  * Faca uma thread Java que realize a leitura de um arquivo

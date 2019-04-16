@@ -36,12 +36,14 @@ public class Ex4 {
             }
             while(true){
                 System.out.println("");
-                for(T1 thread : threads){
+                threads.stream().map((thread) -> {
                     if(thread.isInterrupted()){
                         System.out.println("A "+thread.getName()+" Está Interrompida");
                     }
+                    return thread;
+                }).forEachOrdered((thread) -> {
                     thread.interrupted();
-                }
+                });
                 T1 thread = threads.get(new Random().nextInt(9));
                 thread.interrupt();
                 thread = threads.get(new Random().nextInt(9));

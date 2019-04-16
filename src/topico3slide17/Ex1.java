@@ -1,7 +1,5 @@
 package topico3slide17;
 
-import java.util.List;
-
 /**
  * Faca um programa em Java que inicie tres threads e, cada
  * thread, espere um tempo aleatoorio para terminar.

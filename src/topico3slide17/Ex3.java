@@ -20,7 +20,7 @@ class T extends Thread{
                 System.out.println("Acordei!");
                 BufferedReader br = new BufferedReader(new FileReader(file)); 
             
-                String str = ""; 
+                String str; 
                 while ((str = br.readLine()) != null) {
                     System.out.println(str); 
                     Thread.sleep(200);
