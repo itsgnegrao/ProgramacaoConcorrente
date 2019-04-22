@@ -1,19 +1,19 @@
-package topico4slide18;
+package topico4.slide18;
 
 /**
  *
  * @author itsgnegrao
  */
-public class IntervalSyncronyzed {
+public class Interval {
     private int endInterval = 0;
     private int value = 0;
 
-    public IntervalSyncronyzed(int startInterval, int endInterval){
+    public Interval(int startInterval, int endInterval){
         this.value = startInterval;
         this.endInterval = endInterval;
     }
 
-    public synchronized int getNext(){
+    public int getNext(){
         int ret = value;
         value++;
         return (ret <= endInterval ? ret : -1);

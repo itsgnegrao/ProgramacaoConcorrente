@@ -1,6 +1,4 @@
-package topico6slide16;
-
-import topico4slide18.*;
+package topico6.slide16;
 
 /**
  *

@@ -1,4 +1,4 @@
-package topico3slide17;
+package topico3.slide17;
 
 import java.io.*;
 import java.util.*;

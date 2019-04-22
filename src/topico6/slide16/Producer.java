@@ -1,9 +1,8 @@
-package topico6slide16;
+package topico6.slide16;
 
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import topico4slide18.*;
 
 /**
  *
