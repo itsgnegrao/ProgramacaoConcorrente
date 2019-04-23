@@ -1,6 +1,5 @@
 package topico3.slide17;
 
-import java.io.*;
 import java.util.*;
 /**
  * Faca uma Thread que monitora um conjunto de threads e
@@ -28,26 +27,31 @@ class T1 extends Thread{
 public class Ex4 {
     public static void main(String[] args){
         try{
+            System.out.print("Digite a quantidade de Threads: ");
+            String inputString = new Scanner(System.in).nextLine();
             List<T1> threads = new ArrayList<>();
-            for(int i =0 ; i<10; i++){
+            
+            for(int i =0 ; i<Integer.valueOf(inputString); i++){
                 T1 t = new T1("Thread "+i);
                 t.start();
                 threads.add(t);
             }
+            
             while(true){
                 System.out.println("");
-                threads.stream().map((thread) -> {
+                
+                threads.forEach((thread) -> {
                     if(thread.isInterrupted()){
-                        System.out.println("A "+thread.getName()+" Está Interrompida");
+                       System.out.println("A "+thread.getName()+" Está Interrompida");
+                       Thread.interrupted();
                     }
-                    return thread;
-                }).forEachOrdered((thread) -> {
-                    thread.interrupted();
                 });
-                T1 thread = threads.get(new Random().nextInt(9));
+                
+                T1 thread = threads.get(new Random().nextInt(Integer.valueOf(inputString)));
                 thread.interrupt();
-                thread = threads.get(new Random().nextInt(9));
+                thread = threads.get(new Random().nextInt(Integer.valueOf(inputString)));
                 thread.interrupt();
+                
                 Thread.sleep(1000);
             }
         }

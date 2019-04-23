@@ -1,4 +1,4 @@
-package topico6.slide16;
+package topico6.slide16.Ex1;
 
 /**
  * Implemente o problema do produtor-consumidor que haa um
