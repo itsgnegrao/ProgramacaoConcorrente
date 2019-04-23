@@ -1,4 +1,4 @@
-package topico6a.slide12.Ex1;
+package topico6a.slide12.Ex4;
 
 /**
  *
@@ -11,15 +11,6 @@ public class Monitor {
     private int firstPos = 0;
     private int lastPos = 0;
     private boolean cheio = false;
-
-    public Monitor(int sizeBuff) {
-        this.sizeBuff = sizeBuff;
-        this.buff = new int[sizeBuff];
-
-        for (int i = 0; i < sizeBuff; i++) {
-            this.buff[i] = -1;
-        }
-    }
 
     public synchronized int consume() {
         while (!cheio) {

@@ -1,10 +1,8 @@
 package topico6a.slide12.Ex1;
 
 /**
- * Implemente uma solu¸c˜ao com monitor para o problema do Produtor-Consumidor
+ * Implemente uma solução com monitor para o problema do Produtor-Consumidor
  * usando um buffer circular. ARRAY infinito = buffer circular (ARRAY!)
- *
- * utilizar mod (%) para achar posição no array
  *
  * @author itsgnegrao
  */

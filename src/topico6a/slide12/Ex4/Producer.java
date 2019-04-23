@@ -1,4 +1,4 @@
-package topico6a.slide12.Ex1;
+package topico6a.slide12.Ex4;
 
 import java.util.Random;
 
