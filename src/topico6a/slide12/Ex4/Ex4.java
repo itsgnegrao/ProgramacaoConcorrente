@@ -13,10 +13,10 @@ public class Ex4 {
     public static void main(String[] args) throws InterruptedException {
 
         //variaveis modificadoras
-        int qtdCadeiras = 10;
-        int qtdClientes = 30;
-        int tempoCorte = 1000;
-        int tempoChegadaCliente = 200;
+        int qtdCadeiras = 10; //quantidade de cadeiras da barbearia
+        int qtdClientes = 20; //quantidade de clientes máximo
+        int tempoCorte = 1000; //tempo de corte maior que o tempo de chegada de cliente deixa fila cheia
+        int tempoChegadaCliente = 200; // tempo de chegada maior que o tempo de corte deixa a fila vazia
 
         Barbearia barbearia = new Barbearia(qtdCadeiras);
         Barbeiro barbeiro = new Barbeiro(barbearia, tempoCorte);
@@ -25,9 +25,9 @@ public class Ex4 {
         for (int i = 0; i < qtdClientes; i++) {
             Cliente cliente = new Cliente(barbearia);
             cliente.start();
-            System.out.println("Cliente ["+cliente.getName()+"] criado..\n");
             sleep(tempoChegadaCliente);
         }
+        
         
     }
 

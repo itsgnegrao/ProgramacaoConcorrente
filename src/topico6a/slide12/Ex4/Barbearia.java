@@ -10,6 +10,7 @@ public class Barbearia {
 
     private int qtdCadeiras = 0;
     private ArrayList<Cliente> cadeiras;
+    private Cliente cadeiraCorte;
 
     public Barbearia(int qtdCadeiras) {
         this.qtdCadeiras = qtdCadeiras;
@@ -17,23 +18,25 @@ public class Barbearia {
     }
 
     public synchronized Cliente cortar() {
+        this.cadeiraCorte = (cadeiras.size() > 0 ? cadeiras.get(0) : null);
+        notifyAll();
         return (cadeiras.size() > 0 ? cadeiras.remove(0) : null);
     }
 
     public synchronized void sentar(Cliente cliente) throws InterruptedException {
 
-        if (cadeiras.size() == qtdCadeiras) {
+        if (cadeiras.size() == qtdCadeiras ) {
+            wait();
             return;
         }
 
         if (cadeiras.size() < qtdCadeiras) {
-            if (!cadeiras.contains(cliente)) {
-                System.out.println("[" + cliente.getName() + "] - Cheguei na barbearia!");
-                System.out.println("[" + cliente.getName() + "] - Sentei na espera!");
+            if (!cadeiras.contains(cliente) && cadeiraCorte != cliente) {
+                System.out.println("Cliente [" + cliente.getName() + "] - Sentei na espera!");
                 cadeiras.add(cliente);
                 cliente.interrupt();
 
-                System.out.println("\nFILA ______________________________");
+                System.out.println("\nFILA _________________________: " + cadeiras.size());
                 cadeiras.forEach((clienteSentado) -> {
                     System.out.println("[" + clienteSentado.getName() + "] - Esperando...");
                 });
@@ -41,7 +44,7 @@ public class Barbearia {
             }
 
         }
-        wait();
+
     }
 
 }

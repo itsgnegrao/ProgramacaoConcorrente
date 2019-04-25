@@ -18,19 +18,16 @@ public class Barbeiro extends Thread {
     public synchronized void run() {
         while (true) {
             try {
-                System.out.println("[Barbeiro] - Quem é o próximo??");
                 Cliente cliente = this.barbearia.cortar();
 
                 if (cliente != null) {
-                    System.out.println("[Barbeiro] - To cortando o cabelo do [" + cliente.getName() + "]\n");
+                    System.out.println("\n[Barbeiro] - To cortando o cabelo do [" + cliente.getName() + "]");
                     cliente.stop();
                 } else {
-                    System.out.println("[Barbeiro] - Barbearia Vazia\n");
+                    System.out.println("\n[Barbeiro] - Barbearia Vazia");
                 }
                 
                 sleep(tempoCorte);
-                notifyAll();
-                
             } catch (Exception ex) {
             }
         }
