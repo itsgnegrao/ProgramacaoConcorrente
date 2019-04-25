@@ -1,4 +1,4 @@
-package topico3.slide17;
+package topico3.slide17.Ex1;
 
 /**
  * Faca um programa em Java que inicie tres threads e, cada

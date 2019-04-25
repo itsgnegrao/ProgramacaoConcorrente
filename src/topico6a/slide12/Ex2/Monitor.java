@@ -1,5 +1,7 @@
 package topico6a.slide12.Ex2;
 
+import java.time.LocalTime;
+
 /**
  *
  * @author itsgnegrao
@@ -12,30 +14,30 @@ public class Monitor {
     private boolean wakeUp;
 
     public synchronized void sleepUntil(long value, Process process) {
-        while (!(count <= countMax)) {
-            try {
-                wait();
-            } catch (Exception e) {
-            }
-        }
         this.process = process;
         this.countMax = value;
         this.count = 0;
-        this.process.interrupt();
+        
+        while (!(count <= countMax)) {
+            try {
+                this.process.sleep(10);
+            } catch (Exception e) {
+            }
+        }
+
         this.wakeUp = false;
-        System.out.println("Processo " + this.process.getName() + " Dormiu!");
+        System.out.println(LocalTime.now()+" - Processo " + this.process.getName() + " Dormiu!");
     }
 
     public synchronized boolean increment() {
         while (!wakeUp) {
             try {
                 count++;
-                System.out.println(count);
                 wakeUp = (count >= countMax);
             } catch (Exception e) {
             }
         }
-        System.out.println("Processo " + this.process.getName() + " Acordou!");
+        System.out.println(LocalTime.now()+" - Processo " + this.process.getName() + " Acordou!");
         return false;
     }
 

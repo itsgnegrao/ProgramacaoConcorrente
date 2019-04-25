@@ -17,7 +17,7 @@ public class Ex2 {
         process.start();
         
         while (true) {
-            monitor.sleepUntil(1000L, process);
+            monitor.sleepUntil(1000000000L, process);
             while(monitor.increment()){
                 Thread.yield();
             }

@@ -1,4 +1,4 @@
-package topico3.slide5;
+package topico3.slide5.Ex1;
 
 /**
  * Este exercício implemente uma Thread com a função Lambda
